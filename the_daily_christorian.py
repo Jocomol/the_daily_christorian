@@ -58,33 +58,33 @@ with open("/tmp/cwcki_source/cwcki") as source:
                 quoted = line 
 
     
-# print("---")
-# print("Article Of the Week")
-# print(article_of_the_week_link)
-# print(article_of_the_week_title)
-# print(article_of_the_week_picture)
-# print(article_of_the_week_text)
-# print("---")
+print("---")
+print("Article Of the Week")
+print(article_of_the_week_link)
+print(article_of_the_week_title)
+print(article_of_the_week_picture)
+print(article_of_the_week_text)
+print("---")
 
-# print("This day")
-# print(this_day_link)
-# print(this_day_text)
-# print(this_day_picture)
-# print("---")
+print("This day")
+print(this_day_link)
+print(this_day_text)
+print(this_day_picture)
+print("---")
 
-# print("Ongoing")
-# for item in ongoing:
-#     print(item)
-# for date in dates:
-#     print(date)
-# print("---")
+print("Ongoing")
+for item in ongoing:
+    print(item)
+for date in dates:
+    print(date)
+print("---")
 
-# print("Counter")
-# for coping_counter in coping_counters:
-#    print(coping_counter)
-# print("---")
+print("Counter")
+for coping_counter in coping_counters:
+   print(coping_counter)
+print("---")
 
-# print("Quotes")
-# print(quote)
-# print(quoted)
-# print("---")
+print("Quotes")
+print(quote)
+print(quoted)
+print("---")

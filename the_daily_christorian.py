@@ -60,7 +60,7 @@ with open("/tmp/cwcki_source/cwcki") as source:
     
 print("---")
 print("Article Of the Week")
-print(article_of_the_week_link)
+print(article_of_the_week_link) 
 print(article_of_the_week_title)
 print(article_of_the_week_picture)
 print(article_of_the_week_text)

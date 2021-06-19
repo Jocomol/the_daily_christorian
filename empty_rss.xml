@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="rss.css" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+<channel>
+<title>The Daily Christorian</title>
+<description>Getting informed daily about the frontpage of the cwcki per rss</description>
+<language>en-us</language>
+<link>http://thedailychristorian.news/rss.xml</link>
+<atom:link href="http://thedailychristorian.news/rss.xml" rel="self" type="application/rss+xml" />
+
+<!-- LB -->
+
+</channel>
+</rss>
+

@@ -1,0 +1,2 @@
+Jinja2==3.0.1
+beautifulsoup4==4.7.1

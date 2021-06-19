@@ -1,29 +1,32 @@
 <body>
 	<h1>The Daily Christorian</h1>
-	<h2>Coping Counter</h2>
+	<h2>Counters</h2>
 	<ul>
-		<li>{{ copingcounter1 }} days since Chris made up a new escapist fantasy to cope with reality.</li>
-		<li>{{ copingcounter2 }} days since the Dimensional Merge was to be completed</li>
-		<li>{{ copingcounter3 }} days since Chris joined the cult of the Idea Guys</li>
+		{% for counter in data.counter %}                                    
+                        <li>{{counter}}</li>
+                {% endfor %}
 	</ul>
-	<h2>Begging Counter</h2>
-	<ul>
-		<li>{{ beggingcounter1 }} days since Chris last begged for money</li>
-		<li>{{ beggingcounter2 }} days since Chris last uploaded pages to the Sonichu comic</li>
-		<li>{{ beggincounter3 }} days since Chris last applied for a job</li>
-	</ul>
-	
 	<h2>Article of the week</h2>
 	<img src="{{ data.week.picture }}"></img>
 	<p> {{ data.week.title }} {{ data.week.text }} <a href="{{ data.week.link }}">(more...)</a></p>
 
 	<h2>This day in Christory</h2>
-	<img src="{{ this_day_picture }}"></img> 
-	<p> {{ this_day_text }} <a href="{{ this_day_link }}">(more...)</a></p>
+	<img src="{{ data.day.picture }}"></img> 
+	<p> {{ data.day.text }} <a href="{{ data.day.link }}">(more...)</a></p>
 	
-	<!-- ongoing -->
-
+	<h2>Ongoing</h2>
+	<ul>
+		{% for result in data.ongoing %}
+			<li>{{result}}</li>
+		{% endfor %}
+	</ul>
+	<h3>News</h3>
+	<ul>
+		{% for date in data.dates %}
+			<li>{{date}}</li>
+		{% endfor %}
+	</ul>
 	<h2>Quote of the Now</h2>
-	<p>{{ quote }}</p>
-	<p>-{{ quoted }}</p>
+	<p>{{ data.quote }}</p>
+	<p>- {{ data.quoted }}</p>
 </body>

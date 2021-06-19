@@ -12,4 +12,4 @@ wget https://sonichu.com/cwcki -P $FOLDER
 wget https://sonichu.com/cwcki/"$MONTH"_"$YEAR"_social_media_posts -P $FOLDER
 touch $FILE
 python3 the_daily_christorian.py > $FILE 
-./sup $FILE
+# ./sup $FILE

@@ -2,6 +2,26 @@
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
 
+data = {
+    "week": {
+        "link": None,
+        "title": None,
+        "picture": None,
+        "text": None,
+    },
+    "coping_counters": [],
+    "this_day": {
+        "text": None,
+        "link": None,
+        "picture": None
+
+    },
+    "quote": None,
+    "quoted": None,
+    "begging_counters": [],
+    "ongoing": [] 
+
+}
 article_of_the_week_link = None
 article_of_the_week_title = None
 article_of_the_week_picture = None
@@ -20,15 +40,15 @@ with open("/tmp/cwcki_source/cwcki") as source:
     soup = BeautifulSoup(source, features="html5lib")
 
     article_of_the_week = soup.body.find("a", string="More...")
-    article_of_the_week_title = article_of_the_week["title"]
-    article_of_the_week_link = "https://sonichu.com" + article_of_the_week["href"]
-    article_of_the_week_picture = "https://sonichu.com" + soup.body.find("img", class_="thumbimage")["src"]
+    data["week"]["title"] = article_of_the_week["title"]
+    data["week"]["link"] = "https://sonichu.com" + article_of_the_week["href"]
+    data["week"]["picture"] = "https://sonichu.com" + soup.body.find("img", class_="thumbimage")["src"]
     article_of_the_week_text_para = soup.body.find("div", class_="thumb tright").find_next_sibling("p") 
     while article_of_the_week_text_para is not None:
         if "..." not in article_of_the_week_text_para.get_text():
             article_of_the_week_text += article_of_the_week_text_para.get_text()
         article_of_the_week_text_para = article_of_the_week_text_para.find_next_sibling("p")
-
+    data["week"]["text"] = article_of_the_week_text
     for counter in soup.body.find_all("div", style="font-size:2em"):
         coping_counters.append(counter.get_text().replace(",",""))
     
@@ -61,7 +81,7 @@ with open("/tmp/cwcki_source/cwcki") as source:
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)
 template = env.get_template("template.html")
-output = template.render(copingcounter1=coping_counters[0])
+output = template.render(data=data)
 
 print(output)
 

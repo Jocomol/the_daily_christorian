@@ -7,6 +7,7 @@ cp index.html $WEBFOLDER
 cp sup $WEBFOLDER
 cp the_daily_christorian.* $WEBFOLDER
 cp -R templates $WEBFOLDER
+cp reset.sh $WEBFOLDER
 
 mkdir $WEBFOLDER/daily_chris_chan
 

@@ -6,7 +6,7 @@
 
 # You will want to change these variables to your needs.
 website="https://thedailychristorian.news"
-rssfile="rss.xml"
+rssfile="/var/www/html/thedailychristorian/rss.xml"
 
 # In order to cleanly use sed on a multi-line file, we have to use `tr` to
 # convert newlines to a set character, then run sed, then reconvert the

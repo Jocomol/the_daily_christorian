@@ -26,7 +26,7 @@ data = {
 }
 
 with open("/tmp/cwcki_source/cwcki") as source:
-    soup = BeautifulSoup(source, features="html5lib")
+    soup = BeautifulSoup(source, features="html.parser")
 
     article_of_the_week = soup.body.find("a", string="More...")
     data["week"]["title"] = article_of_the_week["title"]

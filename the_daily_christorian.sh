@@ -4,7 +4,8 @@ MONTH=$(LC_ALL=C date +%B)
 YEAR=$(LC_ALL=C date +%Y)
 DATE=$(LC_ALL=C date +%d)
 POSTS=daily_chris_chan
-FILE=$POSTS/$YEAR-$MONTH-$DATE-post.html
+FULLPATH=$(dirname $0)
+FILE=$FULLPATH/$POSTS/$YEAR-$MONTH-$DATE-post.html
 
 rm -rf $FOLDER
 mkdir $FOLDER

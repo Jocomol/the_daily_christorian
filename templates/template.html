@@ -1,11 +1,5 @@
 <body>
 	<h1>The Daily Christorian</h1>
-	<h2>Counters</h2>
-	<ul>
-		{% for counter in data.counter %}                                    
-                        <li>{{counter}}</li>
-                {% endfor %}
-	</ul>
 	<h2>Article of the week</h2>
 	<img src="{{ data.week.picture }}"></img>
 	<p> {{ data.week.title }} {{ data.week.text }} <a href="{{ data.week.link }}">(more...)</a></p>
@@ -14,13 +8,8 @@
 	<img src="{{ data.day.picture }}"></img> 
 	<p> {{ data.day.text }} <a href="{{ data.day.link }}">(more...)</a></p>
 	
-	<h2>Ongoing</h2>
-	<ul>
-		{% for result in data.ongoing %}
-			<li>{{result}}</li>
-		{% endfor %}
-	</ul>
-	<h3>News</h3>
+	<h2>News</h2>
+	<p>Chris is now in jail for alleged incest. His next court hearing is to be 16 September 2021.</p>
 	<ul>
 		{% for date in data.dates %}
 			<li>{{date}}</li>

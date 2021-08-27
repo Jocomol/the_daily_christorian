@@ -19,8 +19,6 @@ data = {
     },
     "quote": None,
     "quoted": None,
-    "counter":[], 
-    "ongoing": [],
     "dates": []
 
 }
@@ -47,14 +45,9 @@ with open("/tmp/cwcki_source/cwcki") as source:
     para = this_day.find_all("p")
     data["day"]["text"] = para[0].get_text()
     data["day"]["link"] = "https://sonichu.com" + para[1].find("b").find("a")["href"]
-    data["day"]["picture"] = "https://sonichu.com" + this_day.find("a", class_="image")["href"]
+    data["day"]["picture"] = "https://sonichu.com" + this_day.find("a", class_="image").findChildren("img", recursive=False)[0]["src"]
     
-    topic = soup.body.find("b", string="Ongoing").find_next_sibling("a")
-    while topic is not None:
-        data["ongoing"].append(topic.get_text())
-        topic = topic.find_next_sibling("a")
-    
-    dates_array = soup.body.find("b", string="Ongoing").parent.find_next_sibling("ul").find_all("li")
+    dates_array = soup.body.find("a", href="/cwcki/File:CWCki_News.png").parent.find_next_sibling("ul").find_all("li")
     for date in  dates_array:
         data["dates"].append(date.get_text())
     

@@ -9,12 +9,15 @@
 	<p> {{ data.day.text }} <a href="{{ data.day.link }}">(more...)</a></p>
 	
 	<h2>News</h2>
-	<p>Chris is now in jail for alleged incest. His next court hearing is to be 16 September 2021.</p>
+	<p>Chris is now in jail for alleged incest. The court hearing scheduled for 16 September 2021 was postponed following a request from Chris's defence to evaluete Chris's mental health. Currently, it is scheduled for the 18th of November </p>
 	<ul>
 		{% for date in data.dates %}
 			<li>{{date}}</li>
 		{% endfor %}
 	</ul>
+	<h2>Incarceration Counter</h2>
+	<p>Chris has been in custody for {{ data.counter }} days</p>
+	
 	<h2>Quote of the Now</h2>
 	<p>{{ data.quote }}</p>
 	<p>- {{ data.quoted }}</p>

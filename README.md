@@ -11,6 +11,10 @@ To use the RSS feed, add [https://thedailychristorian.xyz/rss.xml](https://theda
 The Developer of this RSS feed does not condone cyber-bullying. This RSS feed is just to help the Christorian cause to document all the information there is out on Christine Weston Chandler.
 
 ## Changelog
+### Version 1.1.1 (Waiting for the hearing...)
+- Added new counters
+- Made ready for any new information on the hearings
+
 ### Version 1.1.0 ([Oh no...](https://www.youtube.com/watch?v=fg3x_v-645U))
 - Removed some titiles (Ongoing, Counters) because they aren't featured on the site anymore
 - Fixed the link of the "this day in christory" picture

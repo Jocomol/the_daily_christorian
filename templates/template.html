@@ -16,7 +16,11 @@
 		{% endfor %}
 	</ul>
 	<h2>Incarceration Counter</h2>
-	<p>Chris has been in custody for {{ data.counter }} days</p>
+	<p>Chris has been in custody for {{ data.counter.incar }} days</p>
+	<h2>Coping Counter</h2>
+	<p>It has been {{ data.counter.coping }} days since Chris has last claimed to be Jesus Christ</p>
+	<h2>Jailhouse Begging Counter</h2>
+	<p><b>Do not send money to Chris</b>: satisfying an autistic inmate’s sweet tooth is a waste of your hard earned C-Quarters. It has been… {{ data.counter.begging }} days since Chris as last begged for money to waste on food from his jail's commissary.</p>
 	
 	<h2>Quote of the Now</h2>
 	<p>{{ data.quote }}</p>

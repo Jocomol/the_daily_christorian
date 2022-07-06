@@ -1,5 +1,5 @@
 #!/bin/bash
-WEBFOLDER=/var/www/html/thedailychristorian
+WEBFOLDER=/usr/local/apache2/htdocs/
 
 mkdir $WEBFOLDER
 mkdir $WEBFOLDER/daily_chris_chan

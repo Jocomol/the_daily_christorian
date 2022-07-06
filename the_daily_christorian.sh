@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 FOLDER=/tmp/cwcki_source
 MONTH=$(LC_ALL=C date +%B)
 YEAR=$(LC_ALL=C date +%Y)

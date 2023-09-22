@@ -4,9 +4,8 @@ from jinja2 import Environment, FileSystemLoader
 
 data = {
     "counter" : {
-        "incar": None,
-        "coping": None,
-        "begging": None
+        "spotted": None,
+        "socialmedia": None
     },
     "week": {
         "link": None,
@@ -35,7 +34,7 @@ with open("/tmp/cwcki_source/cwcki") as source:
     try: # sonichu.com sometimes doesn't have a picture in the Article of the Week, this is a workaround
         data["week"]["picture"] = "https://sonichu.com" + soup.body.find("img", class_="thumbimage")["src"]
     except TypeError:
-       data["week"]["picture"] = "https://sonichu.com" 
+       data["week"]["picture"] = "https://sonichu.com"
     article_of_the_week_text_para = soup.body.find("span", id="Article_of_the_Week").parent.parent.parent.find_next_sibling("tr").find("td").find("div").find("p")
     article_of_the_week_text = ""
     while article_of_the_week_text_para is not None:
@@ -48,25 +47,24 @@ with open("/tmp/cwcki_source/cwcki") as source:
     data["day"]["text"] = para[0].get_text()
     data["day"]["link"] = "https://sonichu.com" + para[1].find("b").find("a")["href"]
     data["day"]["picture"] = "https://sonichu.com" + this_day.find("a", class_="image").findChildren("img", recursive=False)[0]["src"]
-    
+
     dates_array = soup.body.find("a", href="/cwcki/File:CWCki_News.png").parent.find_next_sibling("ul").find_all("li")
     for date in  dates_array:
         data["dates"].append(date.get_text())
     counters = soup.find_all("div", style="font-size:2em")
-    data["counter"]["incar"] = counters[0].getText()
-    data["counter"]["coping"] = counters[1].getText()
-    data["counter"]["begging"] = counters[2].getText()
+    data["counter"]["spotted"] = counters[0].getText()
+    data["counter"]["socialmedia"] = counters[1].getText()
     text = soup.body.find("h2", string="Quote of the Now").parent.parent.find_next_sibling("tr").get_text()
 
-    
-    first = True 
+
+    first = True
     for line in text.splitlines():
         if line.strip() and len(line) > 1:
             if first:
                 data["quote"] = line
-                first = False 
+                first = False
             else:
-                data["quoted"] = line 
+                data["quoted"] = line
 
 file_loader = FileSystemLoader('templates')
 env = Environment(loader=file_loader)

@@ -5,9 +5,9 @@
 	<p> {{ data.week.title }} {{ data.week.text }} <a href="{{ data.week.link }}">(more...)</a></p>
 
 	<h2>This day in Christory</h2>
-	<img src="{{ data.day.picture }}"></img> 
+	<img src="{{ data.day.picture }}"></img>
 	<p> {{ data.day.text }} <a href="{{ data.day.link }}">(more...)</a></p>
-	
+
 	<h2>News</h2>
 	<p>Chris is now in jail for alleged incest. His next court hearing is to be 3 February 2022.</p>
 	<ul>
@@ -15,13 +15,11 @@
 			<li>{{date}}</li>
 		{% endfor %}
 	</ul>
-	<h2>Incarceration Counter</h2>
-	<p>Chris has been in custody for {{ data.counter.incar }} days</p>
-	<h2>Coping Counter</h2>
-	<p>It has been {{ data.counter.coping }} days since Chris has last claimed to be Jesus Christ</p>
-	<h2>Jailhouse Begging Counter</h2>
-	<p><b>Do not send money to Chris</b>: satisfying an autistic inmate’s sweet tooth is a waste of your hard earned C-Quarters. It has been… {{ data.counter.begging }} days since Chris as last begged for money to waste on food from his jail's commissary.</p>
-	
+	<h2>Sighting counter</h2>
+	<p>{{ data.counter.spotted }} days since Chris was last spotted.</p>
+	<h2>Social media counter</h2>
+	<p>It has been {{ data.counter.socialmedia }} days since Chris posted on social media.</p>
+
 	<h2>Quote of the Now</h2>
 	<p>{{ data.quote }}</p>
 	<p>- {{ data.quoted }}</p>
